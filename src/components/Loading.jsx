@@ -1,10 +1,14 @@
 import React from 'react';
-import rain from '../assets/rain.svg';
+import hurricane from '../assets/hurricane.svg';
 
 const Loading = () => {
 	return (
 		<>
-			<img src={rain} alt="loading" className="w-48 md:w-64 m-auto" />
+			<img
+				src={hurricane}
+				alt="loading"
+				className="w-48 md:w-64 m-auto"
+			/>
 		</>
 	);
 };
