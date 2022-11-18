@@ -2,6 +2,7 @@ import React from 'react';
 import clear from '../assets/clear.svg';
 import rain from '../assets/rain.svg';
 import clouds from '../assets/cloudy.svg';
+import overcast from '../assets/overcast-day.svg';
 import snow from '../assets/snow.svg';
 import mist from '../assets/mist.svg';
 import haze from '../assets/haze.svg';
@@ -15,7 +16,11 @@ let src;
 const WeatherIcon = ({ icon }) => {
 	const renderIcon = (src) => {
 		return (
-			<img src={src} className="w-48 h-48" alt="weather conditions" />
+			<img
+				src={src}
+				className="w-20 md:w-28 h-auto m-2 mb-0"
+				alt="weather conditions"
+			/>
 		);
 	};
 
