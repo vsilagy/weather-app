@@ -37,7 +37,8 @@ function App() {
 					setData(res.data);
 					setIcon(res.data.weather[0].main);
 					setLoading(false);
-				}, 1500);
+					console.log(data);
+				}, 800);
 			})
 			.catch((err) => {
 				setLoading(false);
@@ -62,20 +63,20 @@ function App() {
 						) : (
 							<>
 								<div>
-									<h2 className="text-3xl">
+									<h2 className="text-xl md:text-3xl">
 										<span>{data.name}</span>,{' '}
 										<span>{data?.sys?.country}</span>
 									</h2>
 								</div>
 								<div>
 									<button className="focus:text-amber-500">
-										<MdOutlineGpsFixed className="text-2xl" />
+										<MdOutlineGpsFixed className="text-2xl hover:text-amber-500" />
 									</button>
 								</div>
 								<div className="row-span-2 ">
 									<WeatherIcon icon={icon} />
 								</div>
-								<div className="row-span-2 text-[5rem] p-4 font-medium">
+								<div className="p-4  row-span-2 text-4xl md:text-[4rem] font-medium">
 									{data.main ? (
 										<h1>{data.main.temp.toFixed()} °C</h1>
 									) : null}
@@ -102,14 +103,6 @@ function App() {
 										<p className="bold">{data.main.humidity}%</p>
 									) : null}
 									<p>Humidity</p>
-								</div>
-								<div>
-									{data.wind ? (
-										<p className="bold">
-											{data.wind.speed.toFixed()} MPH
-										</p>
-									) : null}
-									<p>Wind Speed</p>
 								</div>
 							</>
 						)}

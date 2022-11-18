@@ -1,5 +1,4 @@
 import React from 'react';
-import search from '../assets/search.svg';
 import { GoSearch } from 'react-icons/go';
 
 const SearchInput = ({ handleInput, handleSubmit, input }) => {
