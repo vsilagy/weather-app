@@ -19,7 +19,6 @@ const WeatherIcon = ({ icon }) => {
 		);
 	};
 
-	console.log(icon);
 	switch (icon) {
 		case 'Clear':
 			src = clear;

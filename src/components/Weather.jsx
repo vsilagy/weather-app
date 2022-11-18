@@ -38,8 +38,8 @@ const Weather = ({ data, loading, icon }) => {
 					<div className="row-span-2 flex flex-col items-center">
 						<WeatherIcon icon={icon} />
 					</div>
-					<div className="p-4 row-span-2 flex flex-col items-center  gap-4 font-medium">
-						<h1 className="text-4xl p-4 md:text-[4.5rem]">
+					<div className="p-4 row-span-2 flex flex-col gap-4 font-medium">
+						<h1 className="text-4xl py-4 md:text-[4.5rem]">
 							{data.main.temp.toFixed(0)} °C{' '}
 						</h1>
 
@@ -57,7 +57,7 @@ const Weather = ({ data, loading, icon }) => {
 						<img src={wind} alt="wind" className="w-20 h-20" />
 
 						<p className="text-sm md:text-base">
-							Wind Speed {data.wind.speed.toFixed(0)} kph{' '}
+							Wind speed: {data.wind.speed.toFixed(0)} kph{' '}
 						</p>
 					</div>
 					<div>
@@ -72,7 +72,12 @@ const Weather = ({ data, loading, icon }) => {
 						</p>
 					</div>
 					<div>
-						<img src={sunrise} alt="sunrise" size="24" />
+						<img
+							src={sunrise}
+							alt="sunrise"
+							className="w-20 h-auto"
+						/>
+						<p>Sunrise:</p>
 						<p>
 							{new Date(
 								data?.sys?.sunrise * 1000,
@@ -80,7 +85,8 @@ const Weather = ({ data, loading, icon }) => {
 						</p>
 					</div>
 					<div>
-						<img src={sunset} alt="sunset" size="24" />
+						<img src={sunset} alt="sunset" className="w-20 h-auto" />
+						<p>Sunset:</p>
 						<p>
 							{new Date(
 								data?.sys?.sunset * 1000,
