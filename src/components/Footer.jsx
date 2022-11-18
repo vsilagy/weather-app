@@ -1,5 +1,6 @@
 import React from 'react';
 import { RiGithubFill } from 'react-icons/ri';
+
 const Footer = () => {
 	return (
 		<footer className="absolute w-full left-0 bottom-0">

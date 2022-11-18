@@ -6,8 +6,8 @@ import Footer from './components/Footer';
 
 function App() {
 	const [location, setLocation] = useState('Greenwich');
-	const [input, setInput] = useState('');
 	const [data, setData] = useState({});
+	const [input, setInput] = useState('');
 	const [icon, setIcon] = useState('');
 	const [loading, setLoading] = useState(false);
 
@@ -35,7 +35,6 @@ function App() {
 					setData(res.data);
 					setIcon(res.data.weather[0].main);
 					setLoading(false);
-					console.log(data);
 				}, 800);
 			})
 			.catch((err) => {
@@ -52,7 +51,9 @@ function App() {
 					handleSubmit={handleSubmit}
 					input={input}
 				/>
-				<Weather data={data} loading={loading} icon={icon} />
+				{data.main && (
+					<Weather data={data} loading={loading} icon={icon} />
+				)}
 			</div>
 			<Footer />
 		</main>

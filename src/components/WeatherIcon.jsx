@@ -14,7 +14,9 @@ import thunderstorm from '../assets/thunderstorms.svg';
 let src;
 const WeatherIcon = ({ icon }) => {
 	const renderIcon = (src) => {
-		return <img src={src} className="w-40" />;
+		return (
+			<img src={src} className="w-48 h-48" alt="weather conditions" />
+		);
 	};
 
 	console.log(icon);
