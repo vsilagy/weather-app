@@ -35,13 +35,12 @@ function App() {
 				.get(
 					`https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&units=${unit}&appid=${API_KEY}`,
 				)
-				.then((response) => {
+				.then((res) => {
 					setTimeout(() => {
-						setData(response.data);
-						setIcon(response.data.weather[0].main);
+						setData(res.data);
+						setIcon(res.data.weather[0].main);
 						setLoading(false);
-						console.log(data);
-					}, 800);
+					}, 500);
 				})
 				.catch((err) => {
 					setLoading(false);
@@ -61,8 +60,7 @@ function App() {
 					setData(res.data);
 					setIcon(res.data.weather[0].main);
 					setLoading(false);
-					// console.log(data);
-				}, 800);
+				}, 500);
 			})
 			.catch((err) => {
 				setLoading(false);
