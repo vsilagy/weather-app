@@ -7,7 +7,7 @@ import Weather from './components/Weather';
 import Footer from './components/Footer';
 
 function App() {
-	const [location, setLocation] = useState('Brasov');
+	const [location, setLocation] = useState('New York');
 	const [data, setData] = useState({});
 	const [input, setInput] = useState('');
 	const [icon, setIcon] = useState('');
@@ -70,7 +70,7 @@ function App() {
 
 	return (
 		<main className="h-screen w-full flex flex-col justify-between bg-gradient-to-tr from-violet-500 to-orange-300">
-			<div className="flex flex-col gap-5 items-center justify-start container mx-auto">
+			<div className="flex flex-col gap-4 md:gap-8 items-center justify-start container mx-auto">
 				<Nav handleGeolocation={handleGeolocation} />
 				<SearchInput
 					handleInput={handleInput}

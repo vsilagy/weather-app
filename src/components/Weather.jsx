@@ -11,7 +11,7 @@ const Weather = ({ data, loading, icon }) => {
 	let today = new Date().toLocaleTimeString();
 
 	return (
-		<section className="w-80 md:w-[36rem] h-[34rem] md:h-[32rem] p-4 grid grid-cols-2 gap-1 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
+		<section className="w-80 md:w-[36rem] h-[36rem] p-4 grid grid-cols-2 gap-1 md:gap-2 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
 			{loading ? (
 				<div className="col-span-2 row-span-3">
 					<Loading />

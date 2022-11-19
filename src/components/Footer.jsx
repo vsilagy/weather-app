@@ -10,7 +10,7 @@ const Footer = () => {
 					href="https://github.com/vsilagy"
 					target={'_blank'}
 					rel={'noreferrer'}>
-					<RiGithubFill className="text-2xl hover:scale-125 hover:text-amber-500 duration-500" />
+					<RiGithubFill className="text-2xl hover:scale-125 hover:text-sky-500 duration-500" />
 				</a>
 			</div>
 		</footer>
