@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 const useGeolocation = () => {
-	const [geoloc, setGeoloc] = useState({
+	const [location, setLocation] = useState({
 		load: false,
 		lat: 0,
 		lon: 0,
 	});
 
 	const onSuccess = (location) => {
-		setGeoloc({
+		setLocation({
 			load: true,
 			lat: location.coords.latitude,
 			lon: location.coords.longitude,
@@ -16,7 +16,7 @@ const useGeolocation = () => {
 	};
 
 	const onError = (error) => {
-		setGeoloc({
+		setLocation({
 			load: true,
 			error,
 		});
@@ -32,7 +32,7 @@ const useGeolocation = () => {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	}, []);
 
-	return geoloc;
+	return location;
 };
 
 export default useGeolocation;
