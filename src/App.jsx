@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import useGeolocation from './hook/useGeolocation';
+import Nav from './components/Nav';
 import SearchInput from './components/SearchInput';
 import Weather from './components/Weather';
 import Footer from './components/Footer';
@@ -8,12 +10,11 @@ function App() {
 	const [location, setLocation] = useState('Brasov');
 	const [data, setData] = useState({});
 	const [input, setInput] = useState('');
-	const [coords, setCoords] = useState(false);
-	const [lat, setLat] = useState('');
-	const [lon, setLon] = useState('');
 	const [icon, setIcon] = useState('');
+	const [unit, setUnit] = useState('metric');
 	const [loading, setLoading] = useState(false);
 
+	const coord = useGeolocation();
 	const API_KEY = 'a4e5f989f6883fe9d0a0483294699526';
 
 	const handleInput = (e) => {
@@ -27,20 +28,12 @@ function App() {
 			setInput('');
 		}
 	};
-	const handleClick = () => {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition((position) => {
-				console.log(position);
-				setLat(position.coords.latitude);
-				setLon(position.coords.longitude);
-				setCoords(true);
-			});
-		}
-		if (coords) {
+	const handleGeolocation = () => {
+		if (coord.load) {
 			setLoading(true);
 			axios
 				.get(
-					`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`,
+					`https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&units=${unit}&appid=${API_KEY}`,
 				)
 				.then((response) => {
 					setTimeout(() => {
@@ -55,14 +48,13 @@ function App() {
 					console.log(err);
 				});
 		}
-		setCoords(true);
 	};
 
 	useEffect(() => {
 		setLoading(true);
 		axios
 			.get(
-				`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`,
+				`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${API_KEY}`,
 			)
 			.then((res) => {
 				setTimeout(() => {
@@ -79,9 +71,9 @@ function App() {
 	}, [location]);
 
 	return (
-		<main className="h-screen w-full relative bg-gradient-to-tr from-violet-500 to-orange-300">
-			<div className="flex flex-col gap-5  items-center  container mx-auto">
-				<button onClick={handleClick}>Click</button>
+		<main className="h-screen w-full flex flex-col justify-between bg-gradient-to-tr from-violet-500 to-orange-300">
+			<div className="flex flex-col gap-5 items-center justify-start container mx-auto">
+				<Nav handleGeolocation={handleGeolocation} />
 				<SearchInput
 					handleInput={handleInput}
 					handleSubmit={handleSubmit}
