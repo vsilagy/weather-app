@@ -8,8 +8,6 @@ import sunrise from '../assets/sunrise.svg';
 import sunset from '../assets/sunset.svg';
 
 const Weather = ({ data, loading, icon }) => {
-	let today = new Date().toLocaleTimeString();
-
 	return (
 		<section className="w-80 md:w-[36rem] h-[36rem] p-4 grid grid-cols-2 gap-1 md:gap-2 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
 			{loading ? (
@@ -22,7 +20,6 @@ const Weather = ({ data, loading, icon }) => {
 						<h2 className="text-2xl md:text-4xl">
 							{data.name}, <span>{data?.sys?.country}</span>
 						</h2>
-						<p className="md:text-xl">{today}</p>
 					</div>
 					<div className="flex flex-col items-center">
 						<p>
