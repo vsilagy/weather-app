@@ -15,7 +15,6 @@ function App() {
 	const [loading, setLoading] = useState(false);
 
 	const coord = useGeolocation();
-	const API_KEY = 'a4e5f989f6883fe9d0a0483294699526';
 
 	const handleInput = (e) => {
 		setInput(e.target.value);
@@ -33,7 +32,11 @@ function App() {
 			setLoading(true);
 			axios
 				.get(
-					`https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&units=${unit}&appid=${API_KEY}`,
+					`https://api.openweathermap.org/data/2.5/weather?lat=${
+						coord.lat
+					}&lon=${coord.lon}&units=${unit}&appid=${
+						import.meta.env.VITE_API_KEY
+					}`,
 				)
 				.then((res) => {
 					setTimeout(() => {
@@ -53,7 +56,9 @@ function App() {
 		setLoading(true);
 		axios
 			.get(
-				`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${API_KEY}`,
+				`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${
+					import.meta.env.VITE_API_KEY
+				}`,
 			)
 			.then((res) => {
 				setTimeout(() => {
