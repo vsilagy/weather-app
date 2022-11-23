@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import SearchInput from './components/SearchInput';
 import Weather from './components/Weather';
 import Footer from './components/Footer';
+import VITE_API_KEY from './components/ApiKey';
 
 function App() {
 	const [location, setLocation] = useState('New York');
@@ -15,7 +16,7 @@ function App() {
 	const [loading, setLoading] = useState(false);
 
 	const coord = useGeolocation();
-
+	console.log(import.meta.env.VITE_API_KEY);
 	const handleInput = (e) => {
 		setInput(e.target.value);
 	};
@@ -32,11 +33,7 @@ function App() {
 			setLoading(true);
 			axios
 				.get(
-					`https://api.openweathermap.org/data/2.5/weather?lat=${
-						coord.lat
-					}&lon=${coord.lon}&units=${unit}&appid=${
-						import.meta.env.VITE_API_KEY
-					}`,
+					`https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&units=${unit}&appid=${VITE_API_KEY}`,
 				)
 				.then((res) => {
 					setTimeout(() => {
@@ -56,9 +53,7 @@ function App() {
 		setLoading(true);
 		axios
 			.get(
-				`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${
-					import.meta.env.VITE_API_KEY
-				}`,
+				`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${VITE_API_KEY}`,
 			)
 			.then((res) => {
 				setTimeout(() => {
