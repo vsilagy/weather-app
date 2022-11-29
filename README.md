@@ -1,12 +1,12 @@
 # Weather App
 
-A weather app built with Vitejs, React and Tailwind CSS and that uses geolocation or a user input location to search for weather stats
+A weather app built with React, Tailwind and Vite and that uses geolocation or a user input location to search for weather stats
 
-[Live Preview](https://weather-vite.netlify.app)
+[Live Preview](https://weather-vs.netlify.app)
 
 ## Built with:
 
-[![Stack](https://skills.thijs.gg/icons?i=react,tailwind,vite,netlify)]
+![Stack](https://skills.thijs.gg/icons?i=react,tailwind,vite,netlify)
 
 - [React](https://reactjs.org/)
 - [Tailwind](https://tailwindcss.com/)
