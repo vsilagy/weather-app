@@ -6,11 +6,11 @@ A weather app built with Vitejs, React and Tailwind CSS and that uses geolocatio
 
 ## Built with:
 
-![Stack](https://skillicons.dev/icons?i=vite,react,tailwind,netlify)
+[![Stack](https://skills.thijs.gg/icons?i=react,tailwind,vite,netlify)]
 
-- [Vitejs](https://vitejs.dev/)
 - [React](https://reactjs.org/)
 - [Tailwind](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
 - [Netlify](https://www.netlify.com/)
 
 ### Resources:
