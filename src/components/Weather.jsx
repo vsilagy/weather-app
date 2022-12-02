@@ -9,42 +9,35 @@ import sunset from '../assets/sunset.svg';
 
 const Weather = ({ data, loading, icon }) => {
 	return (
-		<section className="w-80 md:w-[36rem] h-[36rem] p-4 grid grid-cols-2 gap-1 md:gap-2 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
+		<section className="w-80 md:w-[36rem] h-[36rem] p-2 grid grid-cols-2 gap-1 md:gap-2 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
 			{loading ? (
 				<div className="col-span-2 row-span-3">
 					<Loading />
 				</div>
 			) : (
 				<>
-					<div className="col-span-2 flex flex-col items-center gap-2">
-						<h2 className="text-2xl md:text-4xl">
-							{data.name}, <span>{data?.sys?.country}</span>
-						</h2>
-					</div>
-					<div className="flex flex-col items-center">
+					<div className="flex row-span-2 flex-col items-center justify-between gap-1">
 						<p>
 							<WeatherIcon icon={icon} />
 						</p>
 					</div>
-
-					<div className="flex flex-col items-center">
+					<div className="flex row-span-2 flex-col items-start">
+						<h2 className="text-xl md:text-3xl">
+							{data.name}, <span>{data?.sys?.country}</span>
+						</h2>
+						<p className="text-sm md:text-lg">
+							{data?.weather[0].description}
+						</p>
 						<div className="flex items-center">
+							<h1 className="text-4xl md:text-[3.5rem]">
+								{data.main.temp.toFixed(0)}°C
+							</h1>
 							<img
 								src={thermometer}
 								alt="thermometer"
 								className="w-12 h-auto md:w-20"
 							/>
-							<h1 className="text-4xl md:text-[3.5rem]">
-								{data.main.temp.toFixed(0)}°C
-							</h1>
 						</div>
-					</div>
-					<div>
-						<p className="text-sm md:text-lg">
-							{data?.weather[0].description}
-						</p>
-					</div>
-					<div>
 						<p className="text-sm md:text-lg">
 							Feels Like {data.main.feels_like.toFixed(0)}°C{' '}
 						</p>

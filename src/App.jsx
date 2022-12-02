@@ -16,7 +16,6 @@ function App() {
 	const [loading, setLoading] = useState(false);
 
 	const coord = useGeolocation();
-	console.log(import.meta.env.VITE_API_KEY);
 	const handleInput = (e) => {
 		setInput(e.target.value);
 	};
@@ -38,6 +37,7 @@ function App() {
 				.then((res) => {
 					setTimeout(() => {
 						setData(res.data);
+						console.log(data);
 						setIcon(res.data.weather[0].main);
 						setLoading(false);
 					}, 500);

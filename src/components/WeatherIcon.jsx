@@ -18,7 +18,7 @@ const WeatherIcon = ({ icon }) => {
 		return (
 			<img
 				src={src}
-				className="w-20 md:w-28 h-auto m-2 mb-0"
+				className="w-32 md:w-48 h-auto m-2 mb-0"
 				alt="weather conditions"
 			/>
 		);
