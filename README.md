@@ -4,6 +4,8 @@ A weather app built with React, Tailwind and Vite and that uses geolocation or a
 
 [Live Preview](https://weather-vs.netlify.app)
 
+![screenshot](./public/screenshot.png)
+
 ### Features
 
 - get weather by geolocation using useGeolocation hook
