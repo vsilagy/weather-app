@@ -69,7 +69,7 @@ function App() {
 	}, [location]);
 
 	return (
-		<main className="h-screen w-full flex flex-col justify-between bg-gradient-to-tr from-violet-500 to-orange-300">
+		<main className="h-screen w-screen flex flex-col bg-gradient-to-tr from-violet-500 to-orange-300">
 			<div className="flex flex-col gap-4 md:gap-8 items-center justify-start container mx-auto">
 				<Nav
 					handleGeolocation={handleGeolocation}

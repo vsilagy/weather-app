@@ -9,14 +9,14 @@ import sunset from '../assets/sunset.svg';
 
 const Weather = ({ data, loading, icon }) => {
 	return (
-		<section className="w-80 md:w-[36rem] h-[36rem] p-2 grid grid-cols-2 gap-1 md:gap-2 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
+		<section className="w-80 md:w-[36rem] h-full grid grid-cols-2 p-1 gap-2 md:p-4 md:gap-4 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
 			{loading ? (
 				<div className="col-span-2 row-span-3">
 					<Loading />
 				</div>
 			) : (
 				<>
-					<div className="flex row-span-2 flex-col items-center justify-between gap-1">
+					<div className="flex row-span-2 flex-col items-center justify-between p-4">
 						<p>
 							<WeatherIcon icon={icon} />
 						</p>
@@ -42,7 +42,7 @@ const Weather = ({ data, loading, icon }) => {
 							Feels Like {data.main.feels_like.toFixed(0)}°C{' '}
 						</p>
 					</div>
-					<div className="flex flex-col items-center">
+					<div className="flex flex-col items-center p-4">
 						<img src={wind} alt="wind" className="w-20 h-20" />
 
 						<p className="text-sm md:text-base">
@@ -73,7 +73,7 @@ const Weather = ({ data, loading, icon }) => {
 							).toLocaleTimeString()}
 						</p>
 					</div>
-					<div className="flex flex-col items-center">
+					<div className="flex flex-col items-center p-4">
 						<img src={sunset} alt="sunset" className="w-20 h-auto" />
 						<p>Sunset:</p>
 						<p>

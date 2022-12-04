@@ -3,7 +3,7 @@ import { RiGithubFill } from 'react-icons/ri';
 
 const Footer = () => {
 	return (
-		<footer className="relative">
+		<footer className="relative mt-auto">
 			<div className="flex justify-center items-center gap-2 p-4 text-white">
 				<p>Made by vsilagy</p>
 				<a
