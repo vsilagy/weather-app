@@ -15,7 +15,7 @@ dist-ssr
 
 
 # Editor directories and files
-ApiKey.jsx
+ApiKey.ts
 .vscode/*
 !.vscode/extensions.json
 .idea
