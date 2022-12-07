@@ -1,4 +1,3 @@
-import React from 'react';
 import hurricane from '../assets/hurricane.svg';
 
 const Loading = () => {

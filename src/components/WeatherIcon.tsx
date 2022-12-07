@@ -1,8 +1,6 @@
-import React from 'react';
 import clear from '../assets/clear.svg';
 import rain from '../assets/rain.svg';
 import clouds from '../assets/cloudy.svg';
-import overcast from '../assets/overcast-day.svg';
 import snow from '../assets/snow.svg';
 import mist from '../assets/mist.svg';
 import haze from '../assets/haze.svg';
@@ -12,12 +10,12 @@ import dust from '../assets/dust.svg';
 import tornado from '../assets/tornado.svg';
 import thunderstorm from '../assets/thunderstorms.svg';
 
-let src;
-const WeatherIcon = ({ icon }) => {
-	const renderIcon = (src) => {
+let content: FunctionComponent<SVGAttributes<SVGElement>>;
+const WeatherIcon = ({ icon }): any => {
+	const renderIcon = (content: string) => {
 		return (
 			<img
-				src={src}
+				src={content}
 				className="w-32 md:w-48 h-auto m-2 mb-0"
 				alt="weather conditions"
 			/>
@@ -26,41 +24,41 @@ const WeatherIcon = ({ icon }) => {
 
 	switch (icon) {
 		case 'Clear':
-			src = clear;
+			content = clear;
 			break;
 		case 'Clouds':
-			src = clouds;
+			content = clouds;
 			break;
 		case 'Rain':
-			src = rain;
+			content = rain;
 			break;
 		case 'Snow':
-			src = snow;
+			content = snow;
 			break;
 		case 'Mist':
-			src = mist;
+			content = mist;
 			break;
 		case 'Haze':
-			src = haze;
+			content = haze;
 			break;
 		case 'Thunderstorm':
-			src = thunderstorm;
+			content = thunderstorm;
 			break;
 		case 'Tornado':
-			src = tornado;
+			content = tornado;
 			break;
 		case 'Drizzle':
-			src = drizzle;
+			content = drizzle;
 			break;
 		case 'Dust':
-			src = dust;
+			content = dust;
 			break;
 		case 'Fog':
-			src = fog;
+			content = fog;
 			break;
 	}
 
-	return <>{renderIcon(src)}</>;
+	return <>{renderIcon(content)}</>;
 };
 
 export default WeatherIcon;

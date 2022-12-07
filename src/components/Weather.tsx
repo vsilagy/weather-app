@@ -7,7 +7,15 @@ import wind from '../assets/wind.svg';
 import sunrise from '../assets/sunrise.svg';
 import sunset from '../assets/sunset.svg';
 
-const Weather = ({ data, loading, icon }) => {
+const Weather = ({
+	data,
+	loading,
+	icon,
+}: {
+	data: string;
+	loading: boolean;
+	icon: string;
+}) => {
 	return (
 		<section className="w-80 md:w-[36rem] h-full grid grid-cols-2 p-1 gap-2 md:p-4 md:gap-4 place-items-center place-content-evenly  justify-center text-white md:text-lg rounded outline-none shadow-md bg-transparent/30">
 			{loading ? (
